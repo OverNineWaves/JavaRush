@@ -15,9 +15,7 @@ public class Solution {
     static Map<Integer, String> teg = new HashMap<>();
 
     static StringBuilder stringBuilder = new StringBuilder();
-
     static String[] linesSplit;
-
     public static void main(String[] args){
         String tag = args[0];
         String openTag = "<";
@@ -27,37 +25,49 @@ public class Solution {
             bufferedFileNameReader = new BufferedReader(new InputStreamReader(System.in));
             File fileNameReader = new File(bufferedFileNameReader.readLine());
             bufferedFileReader = new BufferedReader(new FileReader(String.valueOf(fileNameReader)));
-            //String str;
-            int str;
             while (bufferedFileReader.ready()){
-                str = bufferedFileReader.read();
-               stringBuilder.append(str);
+               stringBuilder.append(bufferedFileReader.readLine());
 
             }
+            bufferedFileReader.close();
+            bufferedFileNameReader.close();
         } catch (IOException e){
             e.printStackTrace();
         }
 
-        linesSplit = stringBuilder.substring(stringBuilder.indexOf(openTag + tag)).split("(?= openTag + tag)|| (openTag + tag + ">")");
+        linesSplit = stringBuilder.substring(stringBuilder.indexOf(openTag + tag)).split("(?=<" + tag + ">)|(?=</" + tag + ">)");
 
-        for (int i = 0; i <linesSplit.length ; i++) {
+       /* for (int i = 0; i < linesSplit.length; i++) {
             System.out.println(linesSplit[i]);
-        }
-
-        /*for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).startsWith(openTag + tag)){
+        }*/
+        List<String> lineOut = new ArrayList<>();
+        String out = "";
+        for (int i = 0; i < linesSplit.length; i++) {
+            if (linesSplit[i].startsWith(openTag + tag)){
                 countOpenTag++;
-                System.out.println(countOpenTag);
-                if (list.get(i).endsWith(closeTag)){
-                    countOpenTag--;
-                    System.out.println(countOpenTag);
-                    if (countOpenTag == 0){
-                        System.out.println(list.get(i));
-                    }
-
+               // System.out.println("countOpenTag ++ Количество тагов  <span" + countOpenTag);
+                out = out + linesSplit[i];
+                //lineOut.add(linesSplit[i]);
+                }
+            else if (linesSplit[i].startsWith(closeTag)){
+                countOpenTag--;
+               // System.out.println("countOpenTag -- Количество тагов  <span " + countOpenTag);
+                out = out + linesSplit[i];
+                //lineOut.add(linesSplit[i]);
+                //System.out.println(countOpenTag);
                 }
 
-            }
-        }*/
+            if (countOpenTag == 0){
+                //System.out.println(new ArrayList<>(lineOut));
+                //lineOut.remove(0);
+                list.add(out);
+
+                //System.out.println(out);
+                out= "";
+                    }
+        }
+        for (String result : list) {
+            System.out.println(result);
+        }
     }
 }
