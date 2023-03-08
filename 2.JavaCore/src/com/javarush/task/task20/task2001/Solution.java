@@ -92,7 +92,7 @@ public class Solution {
             if (name != null){          //если name не null, записываем
                 printWriter.println(name);
             }
-            //************************
+
             if (assets != null){
                 isThereAssets = "yes";
             }
