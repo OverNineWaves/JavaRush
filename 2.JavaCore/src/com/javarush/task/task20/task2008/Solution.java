@@ -45,6 +45,10 @@ public class Solution implements Serializable {
     public static class Singleton implements Serializable {
         private static Singleton ourInstance;
 
+        private Object readResolve(){
+           return ourInstance;
+        }
+
         public static Singleton getInstance() {
             if (ourInstance == null) {
                 ourInstance = new Singleton();
