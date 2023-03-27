@@ -7,14 +7,14 @@ import java.io.Serializable;
 */
 
 public class Solution {
-    public static class Object {
-        public String string1;
-        public String string2;
+    public static class Object implements Serializable {
+        public java.lang.String string1;
+        public java.lang.String string2;
     }
 
     public static int stringCount;
 
-    public static class String {
+    public static class String implements Serializable{
         private final int number;
 
         public String() {
@@ -26,7 +26,7 @@ public class Solution {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(java.lang.String[] args) {
 
     }
 }
