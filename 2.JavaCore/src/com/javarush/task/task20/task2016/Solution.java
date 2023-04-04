@@ -7,7 +7,7 @@ import java.io.Serializable;
 */
 
 public class Solution {
-    public class A {
+    public class A implements Serializable{
         String name = "A";
 
         public A(String name) {
@@ -20,7 +20,7 @@ public class Solution {
         }
     }
 
-    public class B extends A {
+    public class B extends A{
         String name = "B";
 
         public B(String name) {
@@ -29,7 +29,7 @@ public class Solution {
         }
     }
 
-    public class C extends B {
+    public class C extends B{
         String name = "C";
 
         public C(String name) {
