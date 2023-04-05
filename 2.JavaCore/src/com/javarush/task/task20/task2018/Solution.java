@@ -6,13 +6,15 @@ import java.io.*;
 Найти ошибки
 */
 
-public class Solution {
-    public static class A {
+public class Solution implements Serializable {
+    public static class A{
 
         protected String nameA = "A";
 
         public A(String nameA) {
             this.nameA += nameA;
+        }
+        public A(){
         }
     }
 
@@ -25,7 +27,18 @@ public class Solution {
             this.nameA += nameA;
             this.nameB = nameB;
         }
+        private void writeObject(ObjectOutputStream oos) throws IOException {
+            oos.defaultWriteObject();
+            oos.writeObject(nameA);
+        }
+
+        private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+            ois.defaultReadObject();
+            nameA = (String) ois.readObject();
+        }
+
     }
+
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         ByteArrayOutputStream arrayOutputStream = new ByteArrayOutputStream();
@@ -34,7 +47,6 @@ public class Solution {
         Solution solution = new Solution();
         B b = solution.new B("B2", "C33");
         System.out.println("nameA: " + b.nameA + ", nameB: " + b.nameB);
-
         oos.writeObject(b);
 
         ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(arrayOutputStream.toByteArray());
