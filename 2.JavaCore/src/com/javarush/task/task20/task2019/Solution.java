@@ -9,12 +9,12 @@ import java.util.Map;
 */
 
 public class Solution implements Serializable {
-
     public static void main(String args[]) throws Exception {
         FileOutputStream fileOutput = new FileOutputStream("your.file.name");
         ObjectOutputStream outputStream = new ObjectOutputStream(fileOutput);
 
         Solution solution = new Solution();
+        //solution.Solution();
         outputStream.writeObject(solution);
 
         fileOutput.close();
@@ -39,10 +39,11 @@ public class Solution implements Serializable {
         return m;
     }
 
-    public void Solution() {
+    public Solution() {
         m.put("Mickey", "Mouse");
         m.put("Mickey", "Mantle");
     }
+
 
     public int size() {
         return m.size();
