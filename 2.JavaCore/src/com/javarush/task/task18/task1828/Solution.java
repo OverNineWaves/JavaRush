@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/* 
+/*
 Прайсы 2
 */
 
@@ -20,10 +20,10 @@ public class Solution {
 
         while (readFormFile.ready()){
             String readStr = readFormFile.readLine();
-          //  String partseId = readStr.substring(0,8).replaceAll("//s", "");
+            //  String partseId = readStr.substring(0,8).replaceAll("//s", "");
             //int productId = Integer.parseInt(readStr.substring(0,8).replace(" ",""));
             int productId = Integer.parseInt(readStr.substring(0,8).trim());
-          //  System.out.println(partseId);
+            //  System.out.println(partseId);
             //int productId = Integer.parseInt(partseId);
             String productName = readStr.substring(8,38);
             Double price = Double.parseDouble(readStr.substring(38,46).trim());
@@ -54,7 +54,7 @@ public class Solution {
                             list.remove(i);
                             i--;
                         }
-                        }
+                    }
                     break;
                 }
             }
@@ -73,11 +73,11 @@ public class Solution {
         for (int i = 0; i < list.size() ; i++) {
 
 
-            fileWriter.write(String.format("%-8d %-30s %-8.2f %4s",
+            fileWriter.write(String.format("%-8d%-30s%-8.2f%4s",
                     list.get(i).getId(),
                     list.get(i).getPoductName(),
                     list.get(i).getPrice(),
-                    list.get(i).getQuantity()));
+                    list.get(i).getQuantity()) + "\n");
         }
         readFormFile.close();
         fileWriter.flush();
