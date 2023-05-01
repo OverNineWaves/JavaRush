@@ -44,8 +44,8 @@ public class Solution {
     }
 
     public static class DataAdapter implements RowItem{
-        Customer customer;
-        Contact contact;
+        private Customer customer;
+        private Contact contact;
         public DataAdapter(Customer customer, Contact contact) {
             this.customer = customer;
             this.contact = contact;
@@ -83,9 +83,12 @@ public class Solution {
 
         @Override
         public String getDialString() {
-            String number = contact.getPhoneNumber().replaceAll("[()-]","");
-            return number;
+            return "callto://"+ contact.getPhoneNumber().replaceAll("[()-]","");
         }
+
+        /*Метод getDialString() должен вернуть строку состоящую из надписи callto:
+        //+  и телефонного номера из которого убраны все символы кроме цифр(смотри примеры).
+         Номер телефона нужно взять из getPhoneNumber() объекта сontact.*/
     }
 
     public static interface RowItem {
