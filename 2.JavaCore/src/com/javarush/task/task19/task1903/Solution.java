@@ -10,21 +10,32 @@ import java.util.Map;
 public class Solution {
     public static Map<String, String> countries = new HashMap<String, String>();
 
+    static {
+        countries.put("UA", "Ukraine");
+        countries.put("RU", "Russia");
+        countries.put("CA", "Canada");
+    }
+
     public static void main(String[] args) {
 
     }
 
     public static class IncomeDataAdapter implements Customer, Contact {
 
-        IncomeData incomeData;
+       private IncomeData data;
 
-        public IncomeDataAdapter(IncomeData incomeData) {
-            this.incomeData = incomeData;
+        public IncomeDataAdapter(IncomeData data) {
+            this.data = data;
         }
 
+        /*
+        * Метод getCountryName() должен вернуть страну из countries, по ключу getCountryCode() объекта data.
+        * */
+
+
         @Override
-        public String getCompanyName() {
-            return incomeData.getCompany();
+        public String getName() {
+            return data.getContactLastName() + ", " + data.getContactFirstName();
         }
 
         @Override
@@ -35,27 +46,29 @@ public class Solution {
                 return "Russia";
             if (incomeData.getCountryCode().equals("CA"))
                 return "Canada";*/
-            switch (incomeData.getCountryCode()){
+           /* switch (data.getCountryCode()){
                 case "RU": return "Russia";
                 case "UA": return "Ukraine";
                 case "CA": return "Canada";
                 default:return "";
-            }
+            }*/
+            return countries.get(data.getCountryCode());
         }
 
         @Override
-        public String getName() {
-            return incomeData.getContactLastName() + ", " + incomeData.getContactFirstName();
+        public String getCompanyName() {
+            return data.getCompany();
         }
+
 
         @Override
         public String getPhoneNumber() {
-            String number = String.valueOf(incomeData.getPhoneNumber());
+            String number = String.valueOf(data.getPhoneNumber());
             while (number.length() < 10){
                 number = "0" + number;
             }
             number = "(" + number.substring(0,3) + ")" + number.substring(3,6) + "-" + number.substring(6,8) + "-" + number.substring(8,10);
-            return "+" + incomeData.getCountryPhoneCode() + number;
+            return "+" + data.getCountryPhoneCode() + number;
         }
     }
 
