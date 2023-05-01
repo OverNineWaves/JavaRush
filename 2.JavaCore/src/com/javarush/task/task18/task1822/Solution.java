@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/* 
+/*
 Поиск данных внутри файла
 */
 
@@ -20,10 +20,10 @@ public class Solution {
         //HashMap<Integer, String> mapStr = new HashMap<>();
         List <String> stringList = new ArrayList<>();
         while(fileReader.ready()){
-        String str = fileReader.readLine();
-        if (str.startsWith(args[0] + " ")){
-            stringList.add(str);
-        }}
+            String str = fileReader.readLine();
+            if (str.startsWith(args[0] + " ")){
+                stringList.add(str);
+            }}
         fileReader.close();
 
         for (int i = 0; i <stringList.size() ; i++) {
