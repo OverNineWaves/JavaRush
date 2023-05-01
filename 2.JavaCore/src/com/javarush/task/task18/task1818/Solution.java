@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/* 
+/*
 Два в одном
 */
 
@@ -21,22 +21,23 @@ public class Solution {
         bufferedReader.close();
         fileOne.close();
         fileTwo.close();
+        fileThree.close();
 
     }
-         static class CopyText{
-            public static void fromTwoToOne(FileReader fileTwo, FileWriter fileOne) throws IOException {
-                while (fileTwo.ready()){
-                    int fromTwo = fileTwo.read();
-                    fileOne.write(fromTwo);
-                }
+    static class CopyText{
+        public static void fromTwoToOne(FileReader fileTwo, FileWriter fileOne) throws IOException {
+            while (fileTwo.ready()){
+                int fromTwo = fileTwo.read();
+                fileOne.write(fromTwo);
             }
-            public static void fromThreeToOne(FileReader fileThree, FileWriter fileOne) throws IOException{
-                while (fileThree.ready()){
-                    int fromThree = fileThree.read();
-                    fileOne.write(fromThree);
-                }
+        }
+        public static void fromThreeToOne(FileReader fileThree, FileWriter fileOne) throws IOException{
+            while (fileThree.ready()){
+                int fromThree = fileThree.read();
+                fileOne.write(fromThree);
             }
-         }
+        }
+    }
 
 }
 

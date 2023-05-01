@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-/* 
+/*
 Английские буквы
 */
 
@@ -18,12 +18,12 @@ public class Solution {
 
         int count = 0;
         while (paramRead.available() > 0){
-                list.add(paramRead.read());
+            list.add(paramRead.read());
         }
 
         for (int i = 0; i < list.size(); i++) {
             if ((list.get(i) >= 65 && list.get(i) <= 90) || (list.get(i) >=97 && list.get(i) <= 122)) {
-      count++;}
+                count++;}
         }
 //
 //

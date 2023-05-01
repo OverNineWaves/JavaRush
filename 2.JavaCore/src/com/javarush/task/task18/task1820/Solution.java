@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-/* 
+/*
 Округление чисел
 */
 
@@ -15,20 +15,21 @@ public class Solution {
         try {
             BufferedReader readFile = new BufferedReader(new FileReader(bufferedReader.readLine()));
             String readFromFile = readFile.readLine();
+
             //FileReader fileOne = new FileReader(bufferedReader.readLine());
             //Calculate.addNumb(fileOne);
             //Calculate.calculate();
 
-           // FileWriter fileTwo = new FileWriter(bufferedReader.readLine());
+            // FileWriter fileTwo = new FileWriter(bufferedReader.readLine());
 
             Calculate.arrayAdd(readFromFile);
             Calculate.outputScreen();
-           // Calculate.readBuff(readFile);
-           // Calculate.printFile();
+            // Calculate.readBuff(readFile);
+            // Calculate.printFile();
             bufferedReader.close();
             readFile.close();
             //fileOne.close();
-           // fileTwo.close();
+            // fileTwo.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -40,7 +41,7 @@ public class Solution {
         //static List<String> numb = new ArrayList<>();
         static String[] numb;
         public static void arrayAdd(String str){
-                numb = str.split(" ");
+            numb = str.split(" ");
         }
 
 

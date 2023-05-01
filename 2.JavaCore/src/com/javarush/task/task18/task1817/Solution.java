@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/* 
+/*
 Пробелы
 */
 
@@ -33,7 +33,10 @@ public class Solution {
             }
             else countAll++;
         }
-        System.out.println("всё: " + countAll + "\n"  + "чисто пробелы: " + countSpace);
-            readArguments.close();
+        //System.out.println("всё: " + countAll + "\n"  + "чисто пробелы: " + countSpace);
+        //System.out.println(countSpace + "." + countAll);
+        float p3 = (float) countSpace / countAll * 100;
+        System.out.printf("%.2f", p3);
+        readArguments.close();
     }
 }

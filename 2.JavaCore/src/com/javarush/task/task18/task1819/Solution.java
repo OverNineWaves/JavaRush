@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/* 
+/*
 Объединение файлов
 */
 
@@ -35,48 +35,48 @@ public class Solution {
 }
 
 class copyToOne{
-        List<Integer> listFileTwo = new ArrayList<>();
-        List<Integer> listFileOne = new ArrayList<>();
-        List<Integer> listAll = new ArrayList<>();
-        public void readFileOne(FileReader fileOneReader){
-            try{
+    List<Integer> listFileTwo = new ArrayList<>();
+    List<Integer> listFileOne = new ArrayList<>();
+    List<Integer> listAll = new ArrayList<>();
+    public void readFileOne(FileReader fileOneReader){
+        try{
             while (fileOneReader.ready()){
-               int some = fileOneReader.read();
+                int some = fileOneReader.read();
                 listFileOne.add(some);
             }
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void readFileTwo(FileReader fileTwoReader){
+        try{
+            while (fileTwoReader.ready()){
+                int readFileTwo = fileTwoReader.read();
+                listFileTwo.add(readFileTwo);
+            }
+        }
+        catch (IOException e){
+            throw new RuntimeException(e);
+        }
+    }
+    public void unityOne(){
+        for (int i = 0; i < listFileOne.size(); i++) {
+            listAll.add(listFileOne.get(i));
+        }
+    }
+    public void unityTwo(){
+        for (int i = 0; i < listFileTwo.size(); i++) {
+            listAll.add(listFileTwo.get(i));
+        }
+    }
+    public void unityAll(FileWriter fileOneWriter){
+        for (int i = 0; i < listAll.size(); i++) {
+            int someArray = listAll.get(i);
+            try {
+                fileOneWriter.write(someArray);
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
-        public void readFileTwo(FileReader fileTwoReader){
-            try{
-                while (fileTwoReader.ready()){
-                    int readFileTwo = fileTwoReader.read();
-                    listFileTwo.add(readFileTwo);
-                }
-            }
-            catch (IOException e){
-                throw new RuntimeException(e);
-            }
-        }
-        public void unityOne(){
-            for (int i = 0; i < listFileOne.size(); i++) {
-                listAll.add(listFileOne.get(i));
-            }
-        }
-        public void unityTwo(){
-            for (int i = 0; i < listFileTwo.size(); i++) {
-                listAll.add(listFileTwo.get(i));
-            }
-        }
-        public void unityAll(FileWriter fileOneWriter){
-            for (int i = 0; i < listAll.size(); i++) {
-                int someArray = listAll.get(i);
-                try {
-                    fileOneWriter.write(someArray);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        }
+    }
 }
