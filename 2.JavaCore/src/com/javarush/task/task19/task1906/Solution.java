@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/* 
+/*
 Четные символы
 */
 
@@ -28,7 +28,7 @@ public class Solution {
         fileReader.close();
 
         for (int i = 1; i < arrayList.size(); i+=2) {
-                fileWriter.write(arrayList.get(i));
+            fileWriter.write(arrayList.get(i));
         }
         fileWriter.close();
     }
