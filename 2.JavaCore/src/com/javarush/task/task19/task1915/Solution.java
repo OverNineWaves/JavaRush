@@ -8,10 +8,9 @@ import java.io.*;
 
 public class Solution {
     public static TestString testString = new TestString();
-    private static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) {
-
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         String fileName;
 
@@ -24,21 +23,21 @@ public class Solution {
             }
         }
 
+        PrintStream trueOut = System.out;
 
-    PrintStream trueOut = System.out;
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
-    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    PrintStream catchOut = new PrintStream(outputStream);
+        PrintStream catchOut = new PrintStream(outputStream);
 
-    System.setOut(catchOut);
+        System.setOut(catchOut);
 
-    testString.printSomething();
+        testString.printSomething();
 
-    String str = outputStream.toString();
+        /*String str = outputStream.toString();
 
-    System.setOut(trueOut);
+        System.setOut(trueOut);
 
-    System.out.println(str);
+        System.out.println(str);
 
         try {
             FileWriter fileWriter = new FileWriter(fileName);
@@ -46,7 +45,20 @@ public class Solution {
             fileWriter.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }*/
+
+
+        FileOutputStream fileOutputStream = null;
+        try {
+            fileOutputStream = new FileOutputStream(fileName);
+            fileOutputStream.write(outputStream.toByteArray());
+            fileOutputStream.close();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+        System.setOut(trueOut);
+        System.out.println(outputStream.toString());
 
     }
 

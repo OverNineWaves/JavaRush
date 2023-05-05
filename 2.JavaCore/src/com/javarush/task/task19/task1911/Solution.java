@@ -12,22 +12,22 @@ public class Solution {
 
     public static void main(String[] args) {
 
-    PrintStream until = System.out;
+        PrintStream until = System.out;
 
-    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
-    PrintStream after = new PrintStream(outputStream);
+        PrintStream after = new PrintStream(outputStream);
 
-    System.setOut(after);
+        System.setOut(after);
 
-    testString.printSomething();
+        testString.printSomething();
 
-    String result = outputStream.toString().toUpperCase();
+        String result = outputStream.toString().toUpperCase();
 
 
-    System.setOut(until);
+        System.setOut(until);
 
-    System.out.println(result);
+        System.out.println(result);
 
 
     }

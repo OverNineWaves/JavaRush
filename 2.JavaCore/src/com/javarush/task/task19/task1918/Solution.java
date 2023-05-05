@@ -3,7 +3,7 @@ package com.javarush.task.task19.task1918;
 import java.io.*;
 import java.util.*;
 
-/* 
+/*
 Знакомство с тегами
 */
 
@@ -26,7 +26,7 @@ public class Solution {
             File fileNameReader = new File(bufferedFileNameReader.readLine());
             bufferedFileReader = new BufferedReader(new FileReader(String.valueOf(fileNameReader)));
             while (bufferedFileReader.ready()){
-               stringBuilder.append(bufferedFileReader.readLine());
+                stringBuilder.append(bufferedFileReader.readLine());
 
             }
             bufferedFileReader.close();
@@ -45,17 +45,17 @@ public class Solution {
         for (int i = 0; i < linesSplit.length; i++) {
             if (linesSplit[i].startsWith(openTag + tag)){
                 countOpenTag++;
-               // System.out.println("countOpenTag ++ Количество тагов  <span" + countOpenTag);
+                // System.out.println("countOpenTag ++ Количество тагов  <span" + countOpenTag);
                 out = out + linesSplit[i];
                 //lineOut.add(linesSplit[i]);
-                }
+            }
             else if (linesSplit[i].startsWith(closeTag)){
                 countOpenTag--;
-               // System.out.println("countOpenTag -- Количество тагов  <span " + countOpenTag);
+                // System.out.println("countOpenTag -- Количество тагов  <span " + countOpenTag);
                 out = out + linesSplit[i];
                 //lineOut.add(linesSplit[i]);
                 //System.out.println(countOpenTag);
-                }
+            }
 
             if (countOpenTag == 0){
                 //System.out.println(new ArrayList<>(lineOut));
@@ -64,7 +64,7 @@ public class Solution {
 
                 //System.out.println(out);
                 out= "";
-                    }
+            }
         }
         for (String result : list) {
             System.out.println(result);

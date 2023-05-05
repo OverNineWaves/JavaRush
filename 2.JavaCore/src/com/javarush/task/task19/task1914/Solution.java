@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 
-/* 
+/*
 Решаем пример
 */
 
@@ -46,7 +46,7 @@ public class Solution {
 
     public static class TestString {
         public void printSomething() {
-            System.out.println("3 * 6 = ");
+            System.out.println("3 + 6 = ");
         }
     }
 }

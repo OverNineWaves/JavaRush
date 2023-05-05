@@ -11,20 +11,20 @@ public class Solution {
     public static TestString testString = new TestString();
 
     public static void main(String[] args) {
-    PrintStream unit = System.out;
+        PrintStream unit = System.out;
 
-    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    PrintStream catchOut = new PrintStream(outputStream);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream catchOut = new PrintStream(outputStream);
 
-    System.setOut(catchOut);
+        System.setOut(catchOut);
 
-    testString.printSomething();
+        testString.printSomething();
 
-    String catchStr = outputStream.toString().replace("te", "??");
+        String catchStr = outputStream.toString().replace("te", "??");
 
-    System.setOut(unit);
+        System.setOut(unit);
 
-    System.out.println(catchStr);
+        System.out.println(catchStr);
     }
 
     public static class TestString {

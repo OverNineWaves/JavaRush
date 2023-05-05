@@ -13,32 +13,34 @@ import java.util.List;
 
 public class Solution {
     public static List<LineItem> lines = new ArrayList<LineItem>();
-    private static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     private static ArrayList<String> list1 = new ArrayList<>();
     private static ArrayList<String> list2 = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String file1 = bufferedReader.readLine();
+        String file2 = bufferedReader.readLine();
 
-    //FileReader readFile1 = new FileReader(bufferedReader.readLine());
-    //FileReader readFile2 = new FileReader(bufferedReader.readLine());
+        //FileReader readFile1 = new FileReader(bufferedReader.readLine());
+        //FileReader readFile2 = new FileReader(bufferedReader.readLine());
 
 
-    BufferedReader reader1 = new BufferedReader(new FileReader(bufferedReader.readLine()));
-    BufferedReader reader2 = new BufferedReader(new FileReader(bufferedReader.readLine()));
+        BufferedReader reader1 = new BufferedReader(new FileReader(file1));
+        BufferedReader reader2 = new BufferedReader(new FileReader(file2));
 
-    while (reader1.ready()){
-       list1.add(reader1.readLine());
-    }
+        while (reader1.ready()){
+            list1.add(reader1.readLine());
+        }
 
-    while (reader2.ready()){
-       list2.add(reader2.readLine());
-    }
+        while (reader2.ready()){
+            list2.add(reader2.readLine());
+        }
         reader1.close();
 
         bufferedReader.close();
-    reader2.close();
+        reader2.close();
 
-    Compare(list1, list2);
+        Compare(list1, list2);
 
         for (LineItem strs : lines){
             System.out.println(strs.line + " " + strs.type);
@@ -60,13 +62,13 @@ public class Solution {
                 lines.add(new LineItem(Type.ADDED, list2.get(0)));
                 list2.remove(0);
             }}
-             if (list1.size() == 0 && list2.size() > 0) {
-                lines.add(new LineItem(Type.ADDED,list2.get(0)));
-                list2.remove(0);
-            } else if (list1.size() > 0 && list2.size() == 0) {
-                lines.add(new LineItem(Type.REMOVED, list1.get(0)));
-                list1.remove(0);
-            }
+        if (list1.size() == 0 && list2.size() > 0) {
+            lines.add(new LineItem(Type.ADDED,list2.get(0)));
+            list2.remove(0);
+        } else if (list1.size() > 0 && list2.size() == 0) {
+            lines.add(new LineItem(Type.REMOVED, list1.get(0)));
+            list1.remove(0);
+        }
     }
 
     public static enum Type {
