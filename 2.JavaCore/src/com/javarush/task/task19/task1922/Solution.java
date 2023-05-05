@@ -24,7 +24,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-            bufferedFileNameReader = new BufferedReader(new InputStreamReader(System.in));
+        bufferedFileNameReader = new BufferedReader(new InputStreamReader(System.in));
         try {
             fileName = bufferedFileNameReader.readLine();
             bufferedFileNameReader.close();
@@ -44,7 +44,7 @@ public class Solution {
                     System.out.println(strLine);
                 }
             }
-            bufferedFileNameReader.close();
+            bufferedFileReader.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

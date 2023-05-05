@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
-/* 
+/*
 Контекстная реклама
 */
 
@@ -33,9 +33,9 @@ public class Solution {
             }
 
             else {
-            System.out.println(str[numb]);
-            numb++;
-            count++;}
+                System.out.println(str[numb]);
+                numb++;
+                count++;}
 
         }
 

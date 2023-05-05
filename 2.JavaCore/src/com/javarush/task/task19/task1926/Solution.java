@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 
-/* 
+/*
 Перевертыши
 */
 
@@ -20,21 +20,21 @@ public class Solution {
     static StringBuilder sb;
 
     public static void main(String[] args) {
-         try {
-             bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-             String fileName = bufferedReader.readLine();
-             bufferedReader.close();
-             bufferedReaderFile = new BufferedReader(new FileReader(fileName));//("/home/overninewaves/javaTestFiles/6.txt"));
-             while (bufferedReaderFile.ready()){
-                 String str = bufferedReaderFile.readLine();
-                 //list.add(bufferedReaderFile.readLine());
-                 //listRevesre = new ArrayList<>(reverseList(list));
-                 sb = new StringBuilder(str).reverse();
-                 //System.out.println(listRevesre);
-                 listRevesre.add(sb.toString());
-                 //System.out.println(sb);
-             }
-             bufferedReaderFile.close();
+        try {
+            bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+            String fileName = bufferedReader.readLine();
+            bufferedReader.close();
+            bufferedReaderFile = new BufferedReader(new FileReader(fileName));//("/home/overninewaves/javaTestFiles/6.txt"));
+            while (bufferedReaderFile.ready()){
+                String str = bufferedReaderFile.readLine();
+                //list.add(bufferedReaderFile.readLine());
+                //listRevesre = new ArrayList<>(reverseList(list));
+                sb = new StringBuilder(str).reverse();
+                //System.out.println(listRevesre);
+                listRevesre.add(sb.toString());
+                //System.out.println(sb);
+            }
+            bufferedReaderFile.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -16,9 +16,8 @@ public class Solution {
     public static void main(String... args) throws IOException {
         try (
                 FileOutputStream outputStream = new FileOutputStream(args[0]);
-                InputStream is = Solution.class.getClassLoader().getResourceAsStream(args[1]);
+                InputStream is = Solution.class.getClassLoader().getResourceAsStream(args[1])
         ) {
-            ;
             byte[] b = new byte[is.available()];
             outputStream.write(is.read(b));
 
@@ -42,8 +41,7 @@ public class Solution {
                 }
             }
 
-            if (result instanceof C) //было  А вместо С
-                 {
+            if (result instanceof C) {
                 C p = (C) result;
                 System.out.println(p.getClass().getSimpleName());
             }

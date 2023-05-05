@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
-/* 
+/*
 Замена чисел
 */
 
@@ -37,12 +37,12 @@ public class Solution {
             //BufferedReader buffFileStrLine = new BufferedReader(new FileReader("/home/overninewaves/javaTestFiles/5.txt"));
             BufferedReader buffFileStrLine = new BufferedReader(new FileReader(filename));
             while (buffFileStrLine.ready()){
-            String fileLine = buffFileStrLine.readLine();
-            for (Map.Entry<Integer, String> mapka : map.entrySet()) { //переборка мапки
-                fileLine = fileLine.replaceAll("\\b" + mapka.getKey() + "\\b", mapka.getValue()); //экранируем спец символ регулярки который ищет по совпадению с начала или с конца.
-                // указали на совпадение по ключу с начала и с конца. и меняем его на значение из мапки
-            }
-            System.out.println(fileLine);}
+                String fileLine = buffFileStrLine.readLine();
+                for (Map.Entry<Integer, String> mapka : map.entrySet()) { //переборка мапки
+                    fileLine = fileLine.replaceAll("\\b" + mapka.getKey() + "\\b", mapka.getValue()); //экранируем спец символ регулярки который ищет по совпадению с начала или с конца.
+                    // указали на совпадение по ключу с начала и с конца. и меняем его на значение из мапки
+                }
+                System.out.println(fileLine);}
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

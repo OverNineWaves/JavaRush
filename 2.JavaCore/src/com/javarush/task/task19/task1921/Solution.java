@@ -11,7 +11,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-/* 
+/*
 Хуан Хуанович
 */
 
@@ -24,7 +24,7 @@ public class Solution {
         try {
             bufferedFileReader = new BufferedReader(new FileReader(args[0]));
             while(bufferedFileReader.ready()){
-            String str = bufferedFileReader.readLine();
+                String str = bufferedFileReader.readLine();
                 try {
                     PEOPLE.add(new Person(str.replaceAll("[^а-яА-Я ]","").trim(), dataFormat.parse(str.replaceAll("[^0-9 ]", "").trim())));
                 } catch (ParseException e) {

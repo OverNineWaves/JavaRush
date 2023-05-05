@@ -11,10 +11,11 @@ import java.util.*;
 */
 
 public class Solution {
-    static BufferedReader bufferedReader;
 
-    static Map<String, Double> listArray = new TreeMap<>();
     public static void main(String[] args) {
+         BufferedReader bufferedReader;
+
+         Map<String, Double> listArray = new TreeMap<>();
         try {
             bufferedReader = new BufferedReader(new FileReader(args[0]));
             while (bufferedReader.ready())
