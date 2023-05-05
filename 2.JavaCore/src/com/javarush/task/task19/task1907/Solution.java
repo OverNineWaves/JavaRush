@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* 
+/*
 Считаем слово
 */
 
@@ -24,15 +24,14 @@ public class Solution {
         bufferedReaderFile.close();
 
         int counter = 0;
-        String[] strArray = strRead.split("\\W");
+        //String[] strArray = strRead.split("\\W");
+        String[] strArray = strRead.split("[\\p{Space} \\t\\n\\r]");
+
         for (String world: strArray) {
             if (world.equals("world")){
                 counter++;
             }
-
         }
         System.out.println(counter);
-
-
     }
 }
