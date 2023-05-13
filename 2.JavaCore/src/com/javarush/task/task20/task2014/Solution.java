@@ -4,7 +4,7 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/* 
+/*
 Serializable Solution
 */
 
@@ -18,7 +18,7 @@ public class Solution implements Serializable{
 
             oos.writeObject(savedObject);
             try {
-               loadedObject = (Solution) ois.readObject();
+                loadedObject = (Solution) ois.readObject();
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }

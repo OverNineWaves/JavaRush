@@ -29,10 +29,10 @@ public class Solution {
                 System.out.print(temp.get(j));
             }*/
             int sum = 0;
-                for (int k = 0; k < temp.size(); k++) { //цикл для перебора суммы числа в степени
-                    int c = (int)Math.pow(temp.get(k), lengthNum); //получает число в степени
-                    sum = sum + c; //суммируем числа
-                }
+            for (int k = 0; k < temp.size(); k++) { //цикл для перебора суммы числа в степени
+                int c = (int)Math.pow(temp.get(k), lengthNum); //получает число в степени
+                sum = sum + c; //суммируем числа
+            }
 
             if (sum == i){
                 arrResult.add(sum);

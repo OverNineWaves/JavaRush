@@ -2,7 +2,7 @@ package com.javarush.task.task20.task2011;
 
 import java.io.*;
 
-/* 
+/*
 Externalizable для апартаментов
 */
 
@@ -34,14 +34,14 @@ public class Solution {
 
         @Override
         public void writeExternal(ObjectOutput out) throws IOException {
-        out.writeObject(address);
-        out.writeInt(year);
+            out.writeObject(address);
+            out.writeInt(year);
         }
 
         @Override
         public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-        address = (String) in.readObject();
-        year = in.readInt();
+            address = (String) in.readObject();
+            year = in.readInt();
         }
     }
 

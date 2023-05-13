@@ -3,7 +3,7 @@ package com.javarush.task.task20.task2020;
 import java.io.*;
 import java.util.logging.Logger;
 
-/* 
+/*
 Сериализация человека
 */
 

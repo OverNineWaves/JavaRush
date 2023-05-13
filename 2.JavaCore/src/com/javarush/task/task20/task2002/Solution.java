@@ -91,49 +91,49 @@ public class Solution {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             User loadSaveUser = new User();
             while (bufferedReader.ready()){
-            String firstName = bufferedReader.readLine();
+                String firstName = bufferedReader.readLine();
                 if (firstName.equals("yes")){
                     loadSaveUser.setFirstName(bufferedReader.readLine());
-                 }
-            else loadSaveUser.setFirstName(null);
-            String lastName = bufferedReader.readLine();
-                 if (lastName.equals("yes")){
+                }
+                else loadSaveUser.setFirstName(null);
+                String lastName = bufferedReader.readLine();
+                if (lastName.equals("yes")){
                     loadSaveUser.setLastName(bufferedReader.readLine());
-                  }
-            else loadSaveUser.setLastName(null);
+                }
+                else loadSaveUser.setLastName(null);
 
-            String date = bufferedReader.readLine();
+                String date = bufferedReader.readLine();
                 if (date.equals("yes")){
                     loadSaveUser.setBirthDate(new Date(Long.parseLong(bufferedReader.readLine())));
                 }
                 else loadSaveUser.setBirthDate(null);
 
-            String male = bufferedReader.readLine();
+                String male = bufferedReader.readLine();
                 if (male.equals("yes")){
                     loadSaveUser.setMale(Boolean.parseBoolean(bufferedReader.readLine()));
                 }
                 else loadSaveUser.setMale(false);
 
-            String county = bufferedReader.readLine();
+                String county = bufferedReader.readLine();
                 if (county.equals("yes")){
                     User.Country select;
                     String selectCounty = bufferedReader.readLine();
                     switch (selectCounty){
                         case "Ukraine" : select = User.Country.UKRAINE;
-                        break;
+                            break;
                         case "Russia" : select = User.Country.RUSSIA;
-                        break;
+                            break;
                         case "Other" :select = User.Country.OTHER;
-                        break;
+                            break;
                         default:select = null;
-                        break;
+                            break;
                     }
                     loadSaveUser.setCountry(select);
                 }
                 else loadSaveUser.setCountry(null);
                 this.users.add(loadSaveUser);
-            //implement this method - реализуйте этот метод
-        }
+                //implement this method - реализуйте этот метод
+            }
             bufferedReader.close();
         }
 

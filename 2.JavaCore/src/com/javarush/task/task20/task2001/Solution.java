@@ -25,7 +25,7 @@ public class Solution {
             somePerson.load(inputStream);
             inputStream.close();
 
-           // System.out.println("somePerson name: " + somePerson.name);
+            // System.out.println("somePerson name: " + somePerson.name);
 
             if (ivanov.equals(somePerson)){
                 System.out.println("равны");
@@ -120,7 +120,7 @@ public class Solution {
             //Human human = new Human();
             if (isThereName.equals("yes")){
                 this.name = reader.readLine();
-                    //System.out.print("name: " + human.name + "\n");
+                //System.out.print("name: " + human.name + "\n");
             }
             else this.name = null;
 

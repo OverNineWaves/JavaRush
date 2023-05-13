@@ -10,11 +10,11 @@ import java.io.Serializable;
 public class Solution {
     public A getOriginalObject(ObjectInputStream objectStream) {
         A a;
-            try {
-                a = (A)objectStream.readObject();
-            } catch (Exception e) {
-               return null;
-            }
+        try {
+            a = (A)objectStream.readObject();
+        } catch (Exception e) {
+            return null;
+        }
         return a;
     }
 

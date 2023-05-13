@@ -46,7 +46,7 @@ public class Solution implements Serializable {
         private static Singleton ourInstance;
 
         private Object readResolve(){
-           return ourInstance;
+            return ourInstance;
         }
 
         public static Singleton getInstance() {

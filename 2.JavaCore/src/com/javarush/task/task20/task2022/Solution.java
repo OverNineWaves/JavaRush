@@ -46,25 +46,25 @@ public class Solution implements Serializable, AutoCloseable {
 5) записать в новый объект данные - writeObject
 6) проверить, что в файле есть данные из п.2 и п.5*/
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-    Solution solution = new Solution("sol2022.dat");
-    solution.writeObject("text");
+        Solution solution = new Solution("sol2022.dat");
+        solution.writeObject("text");
 
-    String path = "sol2022-1.dat";
-    FileOutputStream fos = new FileOutputStream(path);
-    ObjectOutputStream oos = new ObjectOutputStream(fos);
-    oos.writeObject(solution);
-    fos.close();
-    oos.close();
+        String path = "sol2022-1.dat";
+        FileOutputStream fos = new FileOutputStream(path);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(solution);
+        fos.close();
+        oos.close();
 
-    FileInputStream fis = new FileInputStream(path);
-    ObjectInputStream ois = new ObjectInputStream(fis);
+        FileInputStream fis = new FileInputStream(path);
+        ObjectInputStream ois = new ObjectInputStream(fis);
 
-    Solution loadSolution = (Solution) ois.readObject();
-    loadSolution.writeObject("text2");
-    fis.close();
-    ois.close();
+        Solution loadSolution = (Solution) ois.readObject();
+        loadSolution.writeObject("text2");
+        fis.close();
+        ois.close();
 
-       // System.out.println(loadSolution);
+        // System.out.println(loadSolution);
     }
 
    /* public String toString(){
